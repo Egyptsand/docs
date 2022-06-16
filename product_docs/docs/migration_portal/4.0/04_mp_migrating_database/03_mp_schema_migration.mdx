@@ -23,8 +23,6 @@ You can migrate to any of these schemas:
 
 You can migrate schemas to an existing on-premises EDB Postgres Advanced Server on Windows or Linux platforms.
 
-### Migrate schemas on Windows
-
 1.  Select **Existing on-premises EDB Postgres Postgres Advanced Server**.
 
 
@@ -37,46 +35,28 @@ You can migrate schemas to an existing on-premises EDB Postgres Advanced Server 
 3.  To download the assessed schemas, select **Download SQL file**.
 
 
-4.  Select **Windows**.
+4.  Select **Windows** or **Linux**.
 
 
-5.  To import the schemas, run:
+5.  To import the schemas:
 
--   On CLI:
+ **On Windows:**
+
+    -   On CLI run:
 
     ```text
     \i c:\users\...\<project_name>.sql
     ```
 
--   On cmd/shell:
+    -   On cmd/shell run:
 
     ```text
     edb-psql -f <project_name>.sql
     ```
 
- !!! Note
-    You can alternatively use the `pgAdmin` client for the import.
+ **On Linux**
 
-The converted schemas migrate to the target server.
-
-
-### Migrate schemas on Linux
-
-You can migrate schemas to an existing on-premises EDB Postgres Advanced Server on Linux.
-
-1.  Select **Existing on-premises EDB Postgres Advanced Server**.
-
-
-2.  Select one or more schemas to migrate to EDB Postgres Advanced Server.
-
-
-3.  To download the assessed schemas, select **Download SQL file**.
-
-
-4.  Select **Linux**.
-
-
-5.  To import the schemas, invoke the following `edb-psql` client commands:
+    -   Invoke the following `edb-psql` client commands:
 
     ```text
     sudo su - enterprisedb
@@ -86,10 +66,11 @@ You can migrate schemas to an existing on-premises EDB Postgres Advanced Server 
     \i <project_name>.sql
     ```
 
- !!! Note
+!!! Note
     You can alternatively use the `pgAdmin` client for the import.
 
 The converted schemas migrate to the target server.
+
 
 <div id="new_on_premises_edb_advanced_server" class="registered_link"></div>
 
