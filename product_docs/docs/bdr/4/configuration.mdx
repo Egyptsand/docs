@@ -47,10 +47,10 @@ N slots and WAL senders. During synchronization, BDR temporarily uses another
 N - 1 slots and WAL senders, so be careful to set the parameters high enough
 for this occasional peak demand.
 
-With parallel apply turned on, the number of slots must be increased to
-N slots from the formula \* writers. This is because the `max_replication_slots`
-also sets the maximum number of replication origins, and some of the functionality
-of parallel apply uses extra origin per writer.
+The `max_replication_slots` also sets the maximum number of replication origins,
+and some of the functionality of parallel apply uses extra origin per writer.
+Hence with parallel apply turned ON, the `max_replication_slots` must be set to
+`N \* (number of writers)` plus the number of slots given by the above formula. 
 
 When the [decoding worker](nodes#decoding-worker) is enabled, this
 process requires one extra replication slot per BDR group.
